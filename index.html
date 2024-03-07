@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Mahenzo AgroHotel E-system</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js"></script>
+
+    </head>
+    <body>
+
+        <div class="main">
+            <div class="navbar">
+                <div class="icon">
+                    <h2 class="logo">AgroHotel</h2>
+                </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a class="active" href="#">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="service.html">SERVICE</a></li>
+                    <li><a href="product.html">PRODUCT</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+
+            <div class="search">
+                <input class="srch" type="search" name="" placeholder="Type to text">
+                <a href="#"> <button class="btn">search</button></a>
+            </div>
+
+        </div> 
+            <div class="content">
+            <h1>Mahenzo <br><span>AgroHotel</span> <br>E-system</h1>
+        <p class="par">This is an online platform, created to bridge the gap between farmers and <br> 
+                 the hotel industry, for transactional purposes.<br> 
+                 The goal is to enhance communication between the two parties, promote<br> 
+                sell of fresh farm produce, at an affordable rate,at the most convinient time</p>
+                
+
+                <button class="cn"><a href="#">JOIN US</a></button>
+
+                <div class="form">
+                    <h2>Login Here</h2>
+                    <input type="email" name="email" placeholder="Enter Email Here">
+                    <input type="password" name="" placeholder="Enter password Here">
+                    <button class="btnn"><a href="#">Login</a></button>
+
+                    <p class="link">Don't have an account<br>
+                    <a href="#">Sign up </a> here</a></p>
+                    <p class="liw">log in with</p>
+
+                    <div class="icon">
+                        <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
+                 </div>  
+
+                </div>
+                  </div>
+               </div>
+
+        </div>
+    </div>            
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+
+    <script type="module">
+  
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+  import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-analytics.js";
+ 
+  const firebaseConfig = {
+    apiKey: "AIzaSyAfBf3W4bJ0J9RF2R4yzLuHpdc_MGABkMs",
+    authDomain: "sign-up-login-297da.firebaseapp.com",
+    projectId: "sign-up-login-297da",
+    storageBucket: "sign-up-login-297da.appspot.com",
+    messagingSenderId: "670792903891",
+    appId: "1:670792903891:web:f8266f49328d1cfe857826",
+    measurementId: "G-VGFQFRP4XL"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase();
+  const auth = getAuth(app);
+
+  const analytics = getAnalytics(app);
+  
+</script>
+</body>
+</html>
