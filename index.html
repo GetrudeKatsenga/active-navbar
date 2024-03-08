@@ -44,12 +44,13 @@
 
                 <div class="form">
                     <h2>Login Here</h2>
-                    <input type="email" name="email" placeholder="Enter Email Here">
-                    <input type="password" name="" placeholder="Enter password Here">
+                    <input type="text" id="email" name="email" placeholder="Enter Email Here"/>
+                    <input type="password" id="password" name="password" placeholder="Enter password Here"/>
+                    <!-- <input type="submit" id="signUp" name="signup_submit" value="Sign up"/> -->
                     <button class="btnn"><a href="#">Login</a></button>
 
                     <p class="link">Don't have an account<br>
-                    <a href="#">Sign up </a> here</a></p>
+                     <a href="#">Sign up </a> here</a></p>  
                     <p class="liw">log in with</p>
 
                     <div class="icon">
@@ -68,30 +69,56 @@
     </div>            
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 
-    <script type="module">
-  
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-  import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
-  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+</body>
 
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-analytics.js";
- 
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+  import {getDatabase } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
   const firebaseConfig = {
-    apiKey: "AIzaSyAfBf3W4bJ0J9RF2R4yzLuHpdc_MGABkMs",
-    authDomain: "sign-up-login-297da.firebaseapp.com",
-    projectId: "sign-up-login-297da",
-    storageBucket: "sign-up-login-297da.appspot.com",
-    messagingSenderId: "670792903891",
-    appId: "1:670792903891:web:f8266f49328d1cfe857826",
-    measurementId: "G-VGFQFRP4XL"
+    apiKey: "AIzaSyAKWll2P03NbMD-vwbuMCT4sjoqfnd-oMQ",
+    authDomain: "authentication-app-208ca.firebaseapp.com",
+    databaseURL: "https://authentication-app-208ca-default-rtdb.firebaseio.com",
+    projectId: "authentication-app-208ca",
+    storageBucket: "authentication-app-208ca.appspot.com",
+    messagingSenderId: "650250561859",
+    appId: "1:650250561859:web:071febfb9650c8eae267f6"
   };
 
+  // Initialize Firebase
   const app = initializeApp(firebaseConfig);
-  const db = getDatabase();
-  const auth = getAuth(app);
+  const database = getDatabase(app);
+  const auth = getAuth();
 
-  const analytics = getAnalytics(app);
-  
+  signUp.addEventListener("click",(e) => {
+
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+
+    createUserWithEmailAndPassword(auth, email, password)
+     .then((userCredential) => {
+    // Signed up 
+    const user = userCredential.user;
+    alert("user created!");
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+
+    alert("errorMessage");
+    // ..
+  });
+
+
+  });
+
 </script>
-</body>
+
+
 </html>
